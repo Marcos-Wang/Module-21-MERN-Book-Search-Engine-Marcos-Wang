@@ -12,7 +12,14 @@ import Auth from '../utils/auth';
 import { saveBook, searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
+import { useMutation } from '@apollo/client';
+import { SAVE_BOOK } from '../utils/mutations';
+
+import Auth from '../utils/auth';
+
+
 const SearchBooks = () => {
+
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState([]);
   // create state for holding our search field data
@@ -72,6 +79,13 @@ const SearchBooks = () => {
     }
 
     try {
+
+
+
+      //SAVE_BOOK should replace the try block here.
+
+
+
       const response = await saveBook(bookToSave, token);
 
       if (!response.ok) {

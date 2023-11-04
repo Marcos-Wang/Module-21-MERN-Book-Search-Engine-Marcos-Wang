@@ -1,4 +1,7 @@
 const jwt = require('jsonwebtoken');
+var express = require("express")
+var { graphqlHTTP } = require("express-graphql")
+var { buildSchema } = require("graphql")
 
 // set token secret and expiration date
 const secret = 'mysecretsshhhhh';
